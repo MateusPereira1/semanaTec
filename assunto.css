@@ -5,6 +5,8 @@
     font-family: "Raleway", sans-serif;
     outline: none;
 
+    list-style: none;
+
 }
 .textContent{
     width: 50%;
@@ -32,8 +34,11 @@
 .textContent img{
     max-height: 500px;
     max-width: 90%;
+    min-width: 60%;
     object-fit: cover;
     align-self: center;
+    border-radius: 5px;
+    margin: 50px 0;
 
 }
 
@@ -52,10 +57,21 @@ header{
     height: 100px;
     background-color: #303b7c;
 
+    position: fixed;
+    margin-top: -50px;
+
+    z-index: 2;
+
+}
+header a{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header img{
-    height: 50%;
+header a img{
+    height: 70%;
 }
 header nav{
     display: flex;

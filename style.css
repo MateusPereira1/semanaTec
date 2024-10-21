@@ -11,12 +11,13 @@
 body {
 
     background-color: #fff;
+    height: 150vh;
 }
 
 
 main {
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 130px;
     margin-bottom: 100px;
 
     width: 70%;
@@ -60,7 +61,7 @@ main img {
     font-weight: 400;
 }
 
-nav {
+main nav {
 
     display: flex;
     justify-content:center;
@@ -103,7 +104,7 @@ button {
     button{
         width: 80%;
     }
-    nav{
+    main nav{
         gap: 20px;
     }
     main img{
@@ -113,4 +114,46 @@ button {
     main{
         gap: 10px;
     }
+}
+
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100px;
+    background-color: #303b7c;
+
+    position:fixed;
+    margin-top: -130px;
+
+
+}
+header a{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a img{
+    height: 70%;
+}
+header nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header a{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+header a:hover{
+    text-decoration: underline;
 }
