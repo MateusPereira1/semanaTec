@@ -12,13 +12,13 @@ window.addEventListener('scroll', function () {
 
     lastScrollTop = scrollTop;
 });
-
 var questoes = [
     {
         titulo: "Qual bioma é caracterizado por uma grande diversidade de espécies de plantas e animais, muitas das quais endêmicas?",
         op: ["Pampa", "Cerrado", "Mata Atlântica", "Pantanal", "Caatinga"],
         correta: 3,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -26,6 +26,7 @@ var questoes = [
         op: ["Amazônia", "Cerrado", "Pantanal", "Caatinga", "Mata Atlântica"],
         correta: 3,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -33,6 +34,7 @@ var questoes = [
         op: ["Amazônia", "Cerrado", "Pantanal", "Caatinga", "Pampa"],
         correta: 5,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -40,6 +42,7 @@ var questoes = [
         op: ["Amazônia", "Cerrado", "Pantanal", "Caatinga", "Mata Atlântica"],
         correta: 4,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -47,6 +50,7 @@ var questoes = [
         op: ["Mata Atlântica", "Cerrado", "Pantanal", "Caatinga", "Pampa"],
         correta: 4,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -54,6 +58,7 @@ var questoes = [
         op: ["Amazônia", "Cerrado", "Mata Atlântica", "Caatinga", "Pantanal"],
         correta: 3,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -61,6 +66,7 @@ var questoes = [
         op: ["Mata Atlântica", "Cerrado", "Pantanal", "Caatinga", "Amazônia"],
         correta: 4,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -68,6 +74,7 @@ var questoes = [
         op: ["Mata Atlântica", "Cerrado", "Manguezal do Rio Jaguaribe", "Caatinga", "Pantanal"],
         correta: 3,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -75,6 +82,7 @@ var questoes = [
         op: ["Restinga", "Manguezal", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 2,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -82,6 +90,7 @@ var questoes = [
         op: ["Pampa", "Manguezal", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 2,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -89,6 +98,7 @@ var questoes = [
         op: ["Amazônia", "Pantanal", "Mata Atlântica", "Savana", "Taiga"],
         correta: 1,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -96,6 +106,7 @@ var questoes = [
         op: ["Pantanal", "Pampa", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 4,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -103,6 +114,7 @@ var questoes = [
         op: ["Caatinga e Mata Atlântica", "Manguezal e Pantanal", "Mata Atlântica e Amazônia", "Pampa e Amazônia", "Caatinga e Cerrado"],
         correta: 3,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
     },
     {
@@ -110,8 +122,9 @@ var questoes = [
         op: ["Amazônia", "Pantanal", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 3,
         selecionada: false,
+        acertada: false,
         imagem: "imagens/Bioma.png"
-    }   
+    }
 ];
 
 let questoesRestantes = [...Array(questoes.length).keys()];
@@ -123,6 +136,8 @@ function alter(a, i) {
     if (questoes[i].correta === a) {
         console.log("Correto");
         //container.innerHTML += `<p>Resposta correta</p>`;
+        questoes[i].acertada = true
+
         nota += 1
     } else {
         console.log("Errado");
@@ -134,15 +149,59 @@ function alter(a, i) {
     if (questoesRestantes.length > 0) {
         gerarPergunta(); // Gera uma nova pergunta
     } else {
-        
-      
-        container.innerHTML += `<p>Você respondeu todas as perguntas!</p>
+
+
+
+
+
+
+        container.innerHTML = `<p>Você respondeu todas as perguntas!</p>
                                 <h1>Você acertou ${nota} questões</h1>
                                 </br>
                                 </br>
+                                <div id="acertadas">
+                                
+                                </div>
+
+
+                                <a href ="assunto.html">
+                                 <nav>
+                                 <button>Voltar ao início</button>
+                                  </nav>
+
+                                  </a>
+
+
+
+
         
         `;
+
+        var acertadas = document.getElementById("acertadas")
+
+
+        for (x = 0; x < questoes.length; x++) {
+
+            console.log("loop")
+            console.log(acertadas)
+
+            if(questoes[x].acertada == false){
+                questoes[x].acertada = "Errada"
+            }else{
+                questoes[x].acertada = "Correta"
+
+            }
+    
+            acertadas.innerHTML += `
+                <h2>`+ questoes[x].titulo + `</h2>
+                <p>`+ questoes[x].acertada + `</p>
+                `
+    
+    
+        }
     }
+
+   
 }
 
 function sortearNumero(min, max) {
@@ -155,7 +214,7 @@ function gerarPergunta() {
 
         const container = document.getElementById("container");
 
-        container.innerHTML = ` 
+        container.innerHTML = `
             <img id="` + questoes[i].imagem + `" src="` + questoes[i].imagem + `" alt="Imagem do Bioma">
             <div class="text">
                 <h1 id="quest">` + questoes[i].titulo + `</h1>

@@ -108,3 +108,10 @@ header a:hover{
     } 
     
 }
+
+@media (max-width:800px) {
+    .textContent{
+        width: 90%;
+    }
+    
+}
