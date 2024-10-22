@@ -59,10 +59,10 @@ header{
     height: 100px;
     background-color: #303b7c;
 
-    position: fixed;
-    margin-top: -50px;
+    position:fixed;
+    margin-top: -130px;
+    transition: 0.5s;
 
-    z-index: 2;
 
 }
 header a{
@@ -92,8 +92,10 @@ header a:hover{
     text-decoration: underline;
 }
 
-@media (max-width:500px) {
+
+@media (max-width:550px) {
     header{
+        flex-direction: column;
         height: 150px;
     }
 

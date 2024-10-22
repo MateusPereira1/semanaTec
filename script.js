@@ -1,17 +1,23 @@
 let lastScrollTop = 0;
 const header = document.getElementById('header');
 
-window.addEventListener('scroll', function () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+var largura = window.screen.width;
 
-    if (scrollTop > lastScrollTop) {
-        header.style.top = '-80px';
-    } else {
-        header.style.top = '0';
-    }
+if(largura <= 700){
+    window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+        if (scrollTop > lastScrollTop) {
+            header.style.top = '40px';
+        } else {
+            header.style.top = '120px';
+        }
+    
+        lastScrollTop = scrollTop;
+    });
+}
 
-    lastScrollTop = scrollTop;
-});
+
 var questoes = [
     {
         titulo: "Qual bioma é caracterizado por uma grande diversidade de espécies de plantas e animais, muitas das quais endêmicas?",
