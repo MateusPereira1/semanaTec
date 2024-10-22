@@ -89,3 +89,20 @@ header a{
 header a:hover{
     text-decoration: underline;
 }
+
+@media (max-width:500px) {
+    header{
+        height: 150px;
+    }
+
+    header a{
+        height: 50%;
+        font-size: 17px;
+    
+    }
+
+    header > a{
+        height: 40%;
+    } 
+    
+}

@@ -83,7 +83,8 @@ button {
     padding: 15px;
     color: #fff;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
+    min-width: 150px;
 
     font-size: 100%;
     cursor: pointer;
@@ -155,4 +156,23 @@ header a{
 
 header a:hover{
     text-decoration: underline;
+}
+
+
+@media (max-width:550px) {
+    header{
+        flex-direction: column;
+        height: 150px;
+    }
+
+    header a{
+        height: 50%;
+        font-size: 17px;
+    
+    }
+
+    header > a{
+        height: 40%;
+    } 
+    
 }
