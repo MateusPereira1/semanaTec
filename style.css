@@ -93,7 +93,7 @@ button {
     user-select: none;
 
 }
-@media (max-width:700px) {
+@media (max-width:1000px) {
     main{
         box-shadow: none;
         width: 100%;
@@ -103,7 +103,7 @@ button {
 
 }
 
-@media (max-width:500px) {
+@media (max-width:1000px) {
     button{
         width: 80%;
     }
@@ -120,66 +120,7 @@ button {
 }
 
 
-header{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100px;
-    background-color: #303b7c;
 
-    position:fixed;
-    margin-top: -130px;
-    transition: 0.5s;
-
-
-}
-header a{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header a img{
-    height: 70%;
-}
-header nav{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-header a{
-    text-decoration: none;
-    color: aliceblue;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-header a:hover{
-    text-decoration: underline;
-}
-
-
-@media (max-width:550px) {
-    header{
-        flex-direction: column;
-        height: 150px;
-    }
-
-    header a{
-        height: 50%;
-        font-size: 17px;
-    
-    }
-
-    header > a{
-        height: 40%;
-    } 
-    
-}
 
 #container > h1, #container >p{
     text-align: center;

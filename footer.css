@@ -1,0 +1,66 @@
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100px;
+    background-color: #303b7c;
+
+    position:fixed;
+    margin-top: -130px;
+    transition: 0.5s;
+
+
+}
+header a{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a img{
+    height: 70%;
+}
+header nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header a{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+
+@media (max-width:1000px) {
+    header{
+        flex-direction: column;
+        height: 150px;
+    }
+
+    header a{
+        height: 50%;
+        font-size: 25px;
+    
+    }
+
+    header > a{
+        height: 40%;
+    } 
+    
+}
+
+@media (max-width:550px) {
+    header a{
+        font-size: 20px;
+    }
+}
