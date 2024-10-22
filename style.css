@@ -176,3 +176,7 @@ header a:hover{
     } 
     
 }
+
+#container > h1, #container >p{
+    text-align: center;
+}

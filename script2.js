@@ -1,3 +1,4 @@
+//header dinâmico
 let lastScrollTop = 0;
 const header = document.getElementById('header');
 
@@ -13,7 +14,21 @@ window.addEventListener('scroll', function () {
     lastScrollTop = scrollTop;
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 var questoes = [
+
     {
         titulo: "Qual bioma é caracterizado por uma grande diversidade de espécies de plantas e animais, muitas das quais endêmicas?",
         op: ["Pampa", "Cerrado", "Mata Atlântica", "Pantanal", "Caatinga"],
@@ -111,68 +126,71 @@ var questoes = [
         correta: 3,
         selecionada: false,
         imagem: "imagens/Bioma.png"
-    }   
+    }
 ];
-
-let questoesRestantes = [...Array(questoes.length).keys()];
-var nota = 0
-// Função global para verificar a resposta
-function alter(a, i) {
-    const container = document.getElementById("container");
-
-    if (questoes[i].correta === a) {
-        console.log("Correto");
-        //container.innerHTML += `<p>Resposta correta</p>`;
-        nota += 1
-    } else {
-        console.log("Errado");
-        //container.innerHTML += `<p>Resposta incorreta</p>`;
-    }
-
-    questoesRestantes = questoesRestantes.filter(q => q !== i);
-
-    if (questoesRestantes.length > 0) {
-        gerarPergunta(); // Gera uma nova pergunta
-    } else {
-        
-      
-        container.innerHTML += `<p>Você respondeu todas as perguntas!</p>
-                                <h1>Você acertou ${nota} questões</h1>
-                                </br>
-                                </br>
-        
-        `;
-    }
-}
-
+// Sorteando a questão que vou perguntar
 function sortearNumero(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+
 }
+
+
 
 function gerarPergunta() {
-    if (questoesRestantes.length > 0) {
-        var i = questoesRestantes[sortearNumero(0, questoesRestantes.length - 1)];
+    var i = sortearNumero(0, 13)
+    console.log(i)
 
-        const container = document.getElementById("container");
+    function alter(a) {
+        if (questoes[i].correta == a) {
 
-        container.innerHTML = ` 
-            <img id="` + questoes[i].imagem + `" src="` + questoes[i].imagem + `" alt="Imagem do Bioma">
-            <div class="text">
-                <h1 id="quest">` + questoes[i].titulo + `</h1>
-            </div>
-            <nav>
-                <button onclick="alter(0, ${i})" id="op-1">` + questoes[i].op[0] + `</button>
-                <button onclick="alter(1, ${i})" id="op-2">` + questoes[i].op[1] + `</button>
-                <button onclick="alter(2, ${i})" id="op-3">` + questoes[i].op[2] + `</button>
-                <button onclick="alter(3, ${i})" id="op-4">` + questoes[i].op[3] + `</button>
-                <button onclick="alter(4, ${i})" id="op-5">` + questoes[i].op[4] + `</button>
-            </nav>
-        `;
-    } else {
-        const container = document.getElementById("container");
-        container.innerHTML = `<p>Você respondeu todas as perguntas!</p>`;
-        container.innerHTML += `<h1>Você acertou ${nota} questões</h1>`
+            console.log("Correto")
+            container.innerHTML += `
+            
+                <p>
+                    Resposta correta
+                </p>
+            
+            `
+
+        }else if(questoes[i].correta != a){
+            console.log("Correto")
+            container.innerHTML += `
+            
+            <p>
+                Errado
+            </p>
+        `
+        }
     }
-}
 
-gerarPergunta();
+    if (questoes[i].selecionada == false) {
+        const container = document.getElementById("container")
+        console.log("Entrei no IF")
+        container.innerHTML = `
+        
+         <img id="`+ questoes[i].imagem + `" src="` + questoes[i].imagem + `" alt>
+
+            <div class="text">
+                <h1 id="quest">`+ questoes[i].titulo + `</h1>
+            </div>
+
+            <nav>
+
+                <button onclick="alter(0)" id="op-1">`+ questoes[i].op[0] + `</button>
+                <button onclick="alter(1)" id="op-2">`+ questoes[i].op[1] + `</button>
+                <button onclick="alter(2)" id="op-3">`+ questoes[i].op[2] + `</button>
+                <button onclick="alter(3)" id="op-4">`+ questoes[i].op[3] + `</button>
+                <button onclick="alter(4)" id="op-5">`+ questoes[i].op[4] + `</button>
+
+            </nav>
+        
+        `
+    }
+
+
+
+}
+gerarPergunta()
+
+
+
