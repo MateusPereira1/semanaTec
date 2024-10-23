@@ -64,14 +64,14 @@ main img {
 main nav {
 
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     align-self: center;
 
     margin: 0 auto;
     margin-bottom: 40px;
-    gap: 30px   ;
+    gap: 30px;
     width: 90%;
 }
 
@@ -93,8 +93,9 @@ button {
     user-select: none;
 
 }
+
 @media (max-width:1000px) {
-    main{
+    main {
         box-shadow: none;
         width: 100%;
         gap: 28px;
@@ -104,17 +105,20 @@ button {
 }
 
 @media (max-width:1000px) {
-    button{
+    button {
         width: 80%;
     }
-    main nav{
+
+    main nav {
         gap: 20px;
     }
-    main img{
+
+    main img {
         width: 90%;
         margin: 0;
     }
-    main{
+
+    main {
         gap: 10px;
     }
 }
@@ -122,34 +126,82 @@ button {
 
 
 
-#container > h1, #container >p{
+#container>h1,
+#container>p {
     text-align: center;
 }
 
 
 
-#acertadas h2{
-    width: 60%;
+.acertadas h2 {
     font-size: 20px;
     font-weight: 500;
-    margin: 0 auto;
-    margin-top: 20px;
+
 }
 
-#acertadas p{
-    width: 60%;
+.acertadas p {
     font-size: 20px;
     font-weight: 700;
-    margin: 0 auto;
-    margin-bottom: 20px;
+
 }
 
-@media (max-width:700px) {
+.acertadas {
+    width: 60%;
+    margin: 0 auto;
+}
 
-    #acertadas p, #acertadas h2{
+.acertadas h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.acertadas h2 {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.acertadas h3 {
+    background-color: red;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    width: max-content;
+    border-radius: 5px;
+}
+
+.acertadas hr{
+    height: 1px;
+    background-color: black;
+    margin: 30px 0;
+}
+.erro {
+
+    /*
+    text-decoration: underline red 3px;
+    text-underline-offset: 6px;
+    */
+
+    color: red;
+
+}
+
+.certo {
+    background-color: #303b7c;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    width: max-content;
+    border-radius: 5px;
+}
+
+@media (max-width:1000px) {
+
+    .acertadas {
 
         width: 90%;
     }
 
-    
+
 }

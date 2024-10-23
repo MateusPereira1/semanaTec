@@ -4,16 +4,16 @@ const header = document.getElementById('header');
 var largura = window.screen.width;
 console.log(largura)
 
-if(largura < 550){
+if (largura < 550) {
     window.addEventListener('scroll', function () {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
         if (scrollTop > lastScrollTop) {
             header.style.top = '40px';
         } else {
             header.style.top = '120px';
         }
-    
+
         lastScrollTop = scrollTop;
     });
 }
@@ -162,13 +162,20 @@ function alter(a, i) {
 
 
 
-        container.innerHTML = `<p>Você respondeu todas as perguntas!</p>
+        container.innerHTML = `
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p>Você respondeu todas as perguntas!</p>
                                 <h1>Você acertou ${nota} questões</h1>
                                 </br>
                                 </br>
-                                <div id="acertadas">
-                                
-                                </div>
+                               <div id="acertadas" class="acertadas">
+
+                               </div>
 
 
                                 <a href ="assunto.html">
@@ -192,23 +199,35 @@ function alter(a, i) {
             console.log("loop")
             console.log(acertadas)
 
-            if(questoes[x].acertada == false){
+            if (questoes[x].acertada == false) {
                 questoes[x].acertada = "Errada"
-            }else{
+                
+
+                acertadas.innerHTML += `
+             
+
+                <h1 class="erro">`+questoes[x].titulo+`</h1>
+                    <h2>Errado, alternativa correta:</h2>
+                    <h3>`+questoes[x].op[questoes[x].correta]+`</h3>
+                    <hr>
+                `
+            } else {
                 questoes[x].acertada = "Correta"
 
-            }
-    
-            acertadas.innerHTML += `
-                <h2>`+ questoes[x].titulo + `</h2>
-                <p>`+ questoes[x].acertada + `</p>
+
+                acertadas.innerHTML += `
+                <h1>`+questoes[x].titulo+`</h1>
+                <h2 class="certo">`+questoes[x].op[questoes[x].correta]+`</h2>
+                <hr>
                 `
-    
-    
+
+            }
+
+
         }
     }
 
-   
+
 }
 
 function sortearNumero(min, max) {
@@ -222,6 +241,9 @@ function gerarPergunta() {
         const container = document.getElementById("container");
 
         container.innerHTML = `
+                            <br>
+                            <br>
+                            <br>
             <img id="` + questoes[i].imagem + `" src="` + questoes[i].imagem + `" alt="Imagem do Bioma">
             <div class="text">
                 <h1 id="quest">` + questoes[i].titulo + `</h1>
