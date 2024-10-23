@@ -21,116 +21,117 @@ if (largura < 550) {
 
 var questoes = [
     {
+        imagem: "Qimagem/1.jpg",
         titulo: "Qual bioma é caracterizado por uma grande diversidade de espécies de plantas e animais, muitas das quais endêmicas?",
         op: ["Pampa", "Cerrado", "Mata Atlântica", "Pantanal", "Caatinga"],
         correta: 2,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/2.jpg",
         titulo: "Qual bioma é conhecido por suas planícies alagáveis e é considerado uma das maiores áreas úmidas do mundo?",
         op: ["Amazônia", "Cerrado", "Pantanal", "Caatinga", "Mata Atlântica"],
         correta: 2,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/3.jpg",
         titulo: "Qual bioma brasileiro é caracterizado por campos naturais e é encontrado principalmente no sul do Brasil?",
         op: ["Amazônia", "Cerrado", "Pantanal", "Caatinga", "Pampa"],
         correta: 4,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/4.webp",
         titulo: "Qual bioma é conhecido por sua vegetação adaptada a longos períodos de seca e clima semiárido?",
         op: ["Amazônia", "Cerrado", "Pantanal", "Caatinga", "Mata Atlântica"],
         correta: 3,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/5.png",
         titulo: "Qual bioma cobre a maior parte do território de Pernambuco?",
         op: ["Mata Atlântica", "Cerrado", "Pantanal", "Caatinga", "Pampa"],
         correta: 3,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+
+        imagem: "Qimagem/6.webp",
         titulo: "Qual bioma é encontrado principalmente no litoral de Pernambuco?",
         op: ["Amazônia", "Cerrado", "Mata Atlântica", "Caatinga", "Pantanal"],
         correta: 2,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/7.jpg",
         titulo: "Qual bioma pernambucano é caracterizado por um clima semiárido e vegetação xerófila?",
         op: ["Mata Atlântica", "Cerrado", "Pantanal", "Caatinga", "Amazônia"],
         correta: 3,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/8.webp",
         titulo: "Qual ecossistema em Igarassu é conhecido por sua importância ecológica e por ser um paraíso para observadores de aves?",
         op: ["Mata Atlântica", "Cerrado", "Manguezal do Rio Jaguaribe", "Caatinga", "Pantanal"],
         correta: 2,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/9.jpeg",
         titulo: "Qual ecossistema costeiro em Igarassu é crucial para a proteção contra a erosão e serve como berçário para várias espécies marinhas?",
         op: ["Restinga", "Manguezal", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 1,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/10.jpg",
         titulo: "Qual é um exemplo de ecossistema?",
         op: ["Pampa", "Manguezal", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 1,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/11.jpg",
         titulo: "Qual é o bioma mais abundante no Brasil?",
         op: ["Amazônia", "Pantanal", "Mata Atlântica", "Savana", "Taiga"],
         correta: 0,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/12.jpg",
         titulo: "Qual é o bioma conhecido como Savana brasileira?",
         op: ["Pantanal", "Pampa", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 3,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/13.jpg",
         titulo: "Quais os biomas com mais biodiversidade encontrados no Brasil?",
         op: ["Caatinga e Mata Atlântica", "Manguezal e Pantanal", "Mata Atlântica e Amazônia", "Pampa e Amazônia", "Caatinga e Cerrado"],
         correta: 2,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     },
     {
+        imagem: "Qimagem/13.jpg",
         titulo: "Qual é o bioma com mais espécies endêmicas?",
         op: ["Amazônia", "Pantanal", "Mata Atlântica", "Cerrado", "Caatinga"],
         correta: 2,
         selecionada: false,
         acertada: false,
-        imagem: "imagens/Bioma.png"
     }
 ];
 
@@ -201,14 +202,14 @@ function alter(a, i) {
 
             if (questoes[x].acertada == false) {
                 questoes[x].acertada = "Errada"
-                
+
 
                 acertadas.innerHTML += `
              
 
-                <h1 class="erro">`+questoes[x].titulo+`</h1>
+                <h1 class="erro">`+ questoes[x].titulo + `</h1>
                     <h2>Errado, alternativa correta:</h2>
-                    <h3>`+questoes[x].op[questoes[x].correta]+`</h3>
+                    <h3>`+ questoes[x].op[questoes[x].correta] + `</h3>
                     <hr>
                 `
             } else {
@@ -216,8 +217,8 @@ function alter(a, i) {
 
 
                 acertadas.innerHTML += `
-                <h1>`+questoes[x].titulo+`</h1>
-                <h2 class="certo">`+questoes[x].op[questoes[x].correta]+`</h2>
+                <h1>`+ questoes[x].titulo + `</h1>
+                <h2 class="certo">`+ questoes[x].op[questoes[x].correta] + `</h2>
                 <hr>
                 `
 
