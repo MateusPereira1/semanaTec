@@ -141,94 +141,60 @@ var nota = 0
 function alter(a, i) {
     const container = document.getElementById("container");
 
-    if (questoes[i].correta === a) {
-        console.log("Correto");
-        //container.innerHTML += `<p>Resposta correta</p>`;
-        questoes[i].acertada = true
+    // Desabilita os botões das opções para impedir novas seleções
+    const botoes = container.querySelectorAll('button');
+    botoes.forEach(botao => botao.disabled = true);
 
-        nota += 1
+    let feedbackMessage = '';
+
+    if (questoes[i].correta === a) {
+        feedbackMessage = "Você acertou!";
+        questoes[i].acertada = true;
+        nota += 1;
     } else {
-        console.log("Errado");
-        //container.innerHTML += `<p>Resposta incorreta</p>`;
+        feedbackMessage = "Você errou!";
     }
 
-    questoesRestantes = questoesRestantes.filter(q => q !== i);
+    // Adiciona o feedback e o botão de "Próxima Pergunta" abaixo da questão
+    container.innerHTML += `
+        <h2 id="feedback"
+        
+        
+        >${feedbackMessage}</h2>
 
+        <br>
+       
+        <button id="next-button" onclick="proximaPergunta()"
+         style="
+      background-color: green !important;
+      "
+        
+        >Próxima pergunta</button>
+        <br>
+       
+        <br>
+    `;
+
+    // Remove a questão respondida do array de questões restantes
+    questoesRestantes = questoesRestantes.filter(q => q !== i);
+}
+
+
+
+// Função para gerar a próxima pergunta ou finalizar o quiz
+function proximaPergunta() {
     if (questoesRestantes.length > 0) {
         gerarPergunta(); // Gera uma nova pergunta
     } else {
-
-
-
-
-
-
+        const container = document.getElementById("container");
         container.innerHTML = `
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
-                            <p>Você respondeu todas as perguntas!</p>
-                                <h1>Você acertou ${nota} questões</h1>
-                                </br>
-                                </br>
-                               <div id="acertadas" class="acertadas">
-
-                               </div>
-
-
-                                <a href ="assunto.html">
-                                 <nav>
-                                 <button>Voltar ao início</button>
-                                  </nav>
-
-                                  </a>
-
-
-
-
-        
+            <p>Você respondeu todas as perguntas!</p>
+            <h1>Você acertou ${nota} questões</h1>
+            <a href="assunto.html">
+                <button>Voltar ao início</button>
+            </a>
         `;
-
-        var acertadas = document.getElementById("acertadas")
-
-
-        for (x = 0; x < questoes.length; x++) {
-
-            console.log("loop")
-            console.log(acertadas)
-
-            if (questoes[x].acertada == false) {
-                questoes[x].acertada = "Errada"
-
-
-                acertadas.innerHTML += `
-             
-
-                <h1 class="erro">`+ questoes[x].titulo + `</h1>
-                    <h2>Errado, alternativa correta:</h2>
-                    <h3>`+ questoes[x].op[questoes[x].correta] + `</h3>
-                    <hr>
-                `
-            } else {
-                questoes[x].acertada = "Correta"
-
-
-                acertadas.innerHTML += `
-                <h1>`+ questoes[x].titulo + `</h1>
-                <h2 class="certo">`+ questoes[x].op[questoes[x].correta] + `</h2>
-                <hr>
-                `
-
-            }
-
-
-        }
     }
-
-
 }
 
 function sortearNumero(min, max) {
